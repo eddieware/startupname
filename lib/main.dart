@@ -1,34 +1,39 @@
 import 'package:flutter/cupertino.dart';
 import 'package:english_words/english_words.dart';
+
+
  
  
 void main() => runApp(MyApp());
  
  
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
   var _textStyle = new TextStyle(fontSize: 20, color: CupertinoColors.white);
-
   @override
   Widget build(BuildContext context) {
-    //final wordPair = WordPair.random();
+    
 
-    return CupertinoApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Cupertino App',
+     return CupertinoApp(
+      //debugShowCheckedModeBanner: false,
+      title: 'Startup Name Generator',
       home: CupertinoPageScaffold(
+        
         navigationBar: CupertinoNavigationBar(
-          middle: Text('Cupertino App Bar',style: _textStyle),
+          middle: Text('Startup Name Generator',style: _textStyle),
           backgroundColor: CupertinoColors.activeBlue,
         ),
         child: Center(
-          child: Container(
+          
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Text('data'),
+              Text('data'),
+              Text('data'),
+
+            ],
             //child: Text(wordPair.asPascalCase),
-             child: RandomWords(),
+            
           ),
         ),
       ),
@@ -38,12 +43,48 @@ class _MyAppState extends State<MyApp> {
 }
 
 class RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+  final _biggerFont = const TextStyle(fontSize: 8.0);
   // TODO Add build() method
   @override
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
-    return Text(wordPair.asPascalCase);
+    var wordPair = WordPair.random();
+   
+   return Text('data');
+
+ 
   }
+  
+/*
+
+
+
+
+  Widget _buildSuggestions() {
+     print(_suggestions);
+  return ListView.builder(
+      padding: const EdgeInsets.all(16.0),
+      itemBuilder: /*1*/ (context, i) {
+        if (i.isOdd) return Spacer(); /*2*/
+
+        final index = i ~/ 2; /*3*/
+        if (index >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+        }
+        return _buildRow(_suggestions[index]);
+      });
+}
+
+Widget _buildRow(WordPair pair) {
+  print(_suggestions);
+  return ListTile(
+    title: Text(
+      pair.asPascalCase,
+      style: _biggerFont,
+    ),
+  );
+}*/
+  
 }
 
 class RandomWords extends StatefulWidget {
