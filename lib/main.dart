@@ -1,45 +1,67 @@
 import 'package:flutter/cupertino.dart';
 import 'package:english_words/english_words.dart';
 
-
- 
- 
 void main() => runApp(MyApp());
- 
- 
+
 class MyApp extends StatelessWidget {
   var _textStyle = new TextStyle(fontSize: 20, color: CupertinoColors.white);
+  var _textStyleList = new TextStyle(fontSize: 30);
+  final List<String> letras = <String>['A', 'B', 'C'];
+  final List<int> colorCodes = <int>[600, 500, 100];
   @override
   Widget build(BuildContext context) {
-    
-
-     return CupertinoApp(
+    return CupertinoApp(
       //debugShowCheckedModeBanner: false,
       title: 'Startup Name Generator',
       home: CupertinoPageScaffold(
-        
         navigationBar: CupertinoNavigationBar(
-          middle: Text('Startup Name Generator',style: _textStyle),
+          middle: Text('Startup Name Generator', style: _textStyle),
           backgroundColor: CupertinoColors.activeBlue,
         ),
         child: Center(
-          
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Text('data'),
-              Text('data'),
-              Text('data'),
-
-            ],
-            //child: Text(wordPair.asPascalCase),
-            
-          ),
-        ),
+            child: ListView(
+          padding: const EdgeInsets.all(8),
+          children: <Widget>[
+            Container(
+              height: 50,
+              child: const Center(child: Text('Entry A')),
+              decoration: BoxDecoration(
+                  border: Border(
+                bottom:
+                    BorderSide(width: 2.0, color: CupertinoColors.separator),
+              )),
+            ),
+            Container(
+              height: 50,
+              child: const Center(child: Text('Entry B')),
+              decoration: BoxDecoration(
+                  border: Border(
+                bottom:
+                    BorderSide(width: 2.0, color: CupertinoColors.separator),
+              )),
+            ),
+           Container(
+              height: 50,
+              child: const Center(child: Text('Entry C')),
+              decoration: BoxDecoration(
+                  border: Border(
+                bottom:
+                    BorderSide(width: 2.0, color: CupertinoColors.separator),
+              )),
+            ),
+          ],
+        )),
       ),
     );
   }
-  
+
+  Widget _crearPassword() {
+    return Text('data1');
+  }
+
+  Widget _crearPassword1() {
+    return Text('data');
+  }
 }
 
 class RandomWordsState extends State<RandomWords> {
@@ -49,12 +71,10 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     var wordPair = WordPair.random();
-   
-   return Text('data');
 
- 
+    return Text('data');
   }
-  
+
 /*
 
 
@@ -84,7 +104,7 @@ Widget _buildRow(WordPair pair) {
     ),
   );
 }*/
-  
+
 }
 
 class RandomWords extends StatefulWidget {
