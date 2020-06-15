@@ -4,7 +4,7 @@ import 'package:english_words/english_words.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  var _textStyle = new TextStyle(fontSize: 20);
+  final _textStyle = new TextStyle(fontSize: 20);
   //final numeros = ['Uno', 'Dos', 'Tres', 'Cuatro', 'Cinco'];
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
 
   final _biggerFont = const TextStyle(fontSize: 28.0);
-  // TODO Add build() method
+  
   @override
   Widget build(BuildContext context) {
     return _buildSuggestions();
